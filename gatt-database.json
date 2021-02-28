@@ -1,0 +1,19 @@
+{
+    "characteristics" : [
+        {
+            "uuid": "00002235-b38d-4985-720e-0f993a68ee41",
+            "name": "Temperature",
+            "type": "f"
+        },
+        {
+            "uuid": "00001235-b38d-4985-720e-0f993a68ee41",
+            "name": "Humidity",
+            "type": "f"
+        },
+        {
+            "uuid": "00002a19-0000-1000-8000-00805f9b34fb",
+            "name": "Battery",
+            "type": "B"
+        }
+    ]
+}
