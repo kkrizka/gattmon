@@ -2,16 +2,22 @@
 
 import json
 import struct
-import time
 import re
+import os, sys
+
 import dbus
 import dbus.mainloop.glib
 from gi.repository import GLib
+
 from influxdb import InfluxDBClient
 
 #
+# Setup
+myloc=os.path.dirname(sys.argv[0])
+
+#
 # Configuration
-config=json.load(open('config.json'))
+config=json.load(open(f'{myloc}/config.json'))
 
 #
 # Initialize DBus
@@ -26,7 +32,7 @@ dbclient = InfluxDBClient(config['influxdb']['host'], config['influxdb']['port']
 
 #
 # Import list of known GATT variables
-gatt_database=json.load(open('gatt-database.json'))
+gatt_database=json.load(open(f'{myloc}/gatt-database.json'))
 known_characteristics=gatt_database['characteristics']
 
 class GATTMonitor:
